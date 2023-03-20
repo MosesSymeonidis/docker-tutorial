@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  app:
+    # TODO Build the image with test-api as name/tag
+    image: test-api
+    ports:
+      # TODO ADD PORT 8080 to 5000 in the container
+    volumes:
+      # TODO ADD the code of the app
+    environment:
+      FLASK_APP: stateful_server.py

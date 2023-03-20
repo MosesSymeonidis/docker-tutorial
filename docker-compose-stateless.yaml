@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  app:
+    # TODO Build the image with test-api as name/tag
+    image: test-api
+    ports:
+      # TODO ADD PORT 8080 to 5000 in the container
+    volumes:
+      # TODO ADD the code of the app
+    environment:
+      FLASK_APP: stateless_server.py
+      # TODO in order the stateless server to work, you need to introduce the postgres DATABASE_URL
+      DATABASE_URL: # The url should be similar to "postgresql://<POSTGRES_USER>:<POSTGRES_PASSWORD>@<POSTGRESQL-IP>:5432/<POSTGRES_DB>"
+
+  db:
+    image: postgres:13-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=hello_flask
+      - POSTGRES_PASSWORD=hello_flask
+      - POSTGRES_DB=hello_flask_dev
+volumes:
+  # TODO ADD the missing volume
